@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d2625a1e-592f-48d2-ae3e-4d8f6aa1304f" name="默认的" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1jYctP5FyVKQFEmGDVHbHEdQLyQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2625a1e-592f-48d2-ae3e-4d8f6aa1304f" name="默认的" comment="" />
+      <created>1603984680299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603984680299</updated>
+      <workItem from="1603984682043" duration="44000" />
+      <workItem from="1603984737235" duration="2320000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="662" y="325" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603985873246">
+      <screen x="56" y="23" width="1736" height="1097" />
+    </state>
+    <state x="662" y="325" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1792.63.1920.1057/56.23.1736.1097@56.23.1736.1097" timestamp="1603985873246" />
+    <state x="512" y="313" key="IDE.errors.dialog" timestamp="1603985243228">
+      <screen x="56" y="23" width="1736" height="1097" />
+    </state>
+    <state x="512" y="313" key="IDE.errors.dialog/1792.63.1920.1057/56.23.1736.1097@56.23.1736.1097" timestamp="1603985243227" />
+    <state x="425" y="210" key="SettingsEditor" timestamp="1603984763669">
+      <screen x="56" y="23" width="1736" height="1097" />
+    </state>
+    <state x="425" y="210" key="SettingsEditor/1792.63.1920.1057/56.23.1736.1097@56.23.1736.1097" timestamp="1603984763669" />
+    <state x="634" y="180" width="580" height="783" key="find.popup" timestamp="1603985272829">
+      <screen x="56" y="23" width="1736" height="1097" />
+    </state>
+    <state x="634" y="180" width="580" height="783" key="find.popup/1792.63.1920.1057/56.23.1736.1097@56.23.1736.1097" timestamp="1603985272829" />
+  </component>
+</project>
