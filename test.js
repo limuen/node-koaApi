@@ -1,27 +1,38 @@
-function f1() {
-    try {
-        f2()
-    } catch (error) {
-        throw error
-    }
+function fun1() {
+    fun2()
 }
 
-function f2() {
-    try {
-        f3()
-    } catch (error) {
-        throw error
-    }
-}
 
-function f3() {
+async function fun2() {
     try{
-        0/a
+       await fun3()
     } catch (error) {
-        throw error
+       console.log('error')
     }
-    return 'success'
 }
+
+function fun3() {
+    // return await setTimeout(()=> {
+    //   throw new Error('error')
+    // },1000)
+    return new Promise((resolve, reject) => {
+        setTimeout(()=> {
+            const random = Math.random()
+            if(random < 0.5) {
+                reject('error')
+            }
+        },1000)
+    })
+}
+fun1()
+
+
+
+
+
+
+
+
 
 // 没有发生异常 正常返回结果
 // 发生了异常
