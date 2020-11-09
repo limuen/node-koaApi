@@ -11,12 +11,13 @@ router.post('/v1/:id/classic/latest', async(ctx, next)=>{
     const headers = ctx.request.header;
     const body = ctx.request.body;
 
-
+  
     /* 实例化验证类 */
-    /* 调用类里面的方法 validate 所有的参数都保存在ctx里面 所以要把ctx作为参数传递进去 */
-    const v = await new PositiveIntegerValidator().validate(ctx)
+    /* 调用类里面的方法 validate 所有的参数都保存在ctx里面 所以要把ctx作为参数传递进去 */   
+    const v = await new PositiveIntegerValidator().validate(ctx) 
     const id = v.get('path.id', parsed = false)
-    ctx.body = { key: 'classic' }
-})
+    console.log(id, '--------------------id')
+    ctx.body = { key: 'classic' }   
+})  
 
 module.exports = router

@@ -4,6 +4,10 @@ const catchError = async (ctx, next) => {
     try {
         await next()
     } catch (error) {
+        // 判断是否是生产环境输出error
+        if(global.config.environment === 'dev') {
+            throw error
+        }
         // 判断error如果是HttpException 则直接进行赋值
         if(error instanceof HttpException) {
             // 已知异常

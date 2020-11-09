@@ -1,5 +1,6 @@
 function fun1() {
-    fun2()
+    // fun2()
+    console.log(({}+[]).length)
 }
 
 

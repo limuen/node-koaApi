@@ -8,7 +8,17 @@ class InitManager {
     InitManager.initLoadRouters()
     // loadHttpException这种方法导致如果写错都不报错
     // InitManager.loadHttpException()
+    // 引入环境
+    InitManager.loadConfig()
   }
+  
+  static loadConfig(path = '') {
+    const configPath = path || process.cwd() + '/config/config.js'
+    const config = require(configPath)
+    global.config = config
+  }
+
+
   static initLoadRouters() {
     // path config
     const apiDirectory = `${process.cwd()}/app/api`;
