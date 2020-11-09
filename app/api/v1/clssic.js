@@ -5,7 +5,7 @@ const { PositiveIntegerValidator }  = require('../../validators/validator')
 
 const { ParameterException } = require('../../../core/http-exception')
 
-router.post('/v1/:id/classic/latest', async(ctx, next)=>{
+router.post('/v1/:id/classic/latest', async (ctx, next)=>{
     const path = ctx.params;
     const query = ctx.request.query;
     const headers = ctx.request.header;
