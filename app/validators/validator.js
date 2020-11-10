@@ -1,5 +1,7 @@
 const { LinValidator, Rule } = require("../../core/validator");
 
+const  { User }  = require('../models/user')
+
 class PositiveIntegerValidator extends LinValidator {
     constructor() {
         super();
@@ -7,6 +9,9 @@ class PositiveIntegerValidator extends LinValidator {
     }
 }
 
+/**
+ * 注册
+ */
 class RegisterValidator extends LinValidator {
     constructor() {
         super();
@@ -26,6 +31,24 @@ class RegisterValidator extends LinValidator {
         const psw2 = vals.body.password2
         if (psw1 !== psw2) {
             throw new Error('两个密码必须相同')
+        }
+    }
+
+    /**
+     * @description 自定义验证email
+     * @param {*} vals 所有的参数对象集合
+     * @findOne 查找数据库 对象
+     * @where where也是个对象 
+     */
+    async validateEmail(vals) {
+        const email = vals.body.email
+        const user = await User.findOne({
+            where: {
+                email
+            }
+        })
+        if(user) {
+            throw new Error('email已存在')
         }
     }
 

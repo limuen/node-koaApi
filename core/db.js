@@ -23,7 +23,7 @@ const sequelize = new Sequelize(dbName, user, password, {
 });
 
 sequelize.sync({
-    force: true  //删除表重新生成，只限于dev
+    force: false  //删除表重新生成，只限于dev
 })
 
 module.exports = {
