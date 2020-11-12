@@ -38,7 +38,7 @@ class RegisterValidator extends LinValidator {
      * @description 自定义验证email
      * @param {*} vals 所有的参数对象集合
      * @findOne 查找数据库 对象
-     * @where where也是个对象 
+     * @where where用来指定查询条件 也是个对象
      */
     async validateEmail(vals) {
         const email = vals.body.email
