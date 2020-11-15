@@ -7,7 +7,7 @@ class InitManager {
     InitManager.app = app
     InitManager.initLoadRouters()
     // loadHttpException这种方法导致如果写错都不报错
-    // InitManager.loadHttpException()
+    InitManager.loadHttpException()
     // 引入环境
     InitManager.loadConfig()
   }

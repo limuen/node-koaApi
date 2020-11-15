@@ -34,7 +34,26 @@ class ParameterException extends HttpException {
     }
 }
 
+/**
+ * 继承HttpException定义code值为201的时候返回类
+ * 201为新增时候返回的参数， 200是查询
+ * @author LiMuEn
+ * @date 2020-11-15
+ * @param 参数
+ * @return msg
+ * @return errorCode 
+ */
+class Success extends HttpException {
+    constructor(msg, errorCode) {
+        super()
+        this.code = 201
+        this.msg = msg || 'ok'
+        this.errorCode = errorCode || 0
+    }
+}
+
 module.exports = {
     HttpException,
-    ParameterException
+    ParameterException,
+    Success
 }
