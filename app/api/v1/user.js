@@ -24,7 +24,6 @@ router.post("/register", async (ctx, next) => {
     nickname: v.get("body.nickname"),
   };
 
-  console.log(user, "user");
   User.create(user);
   success();
 });

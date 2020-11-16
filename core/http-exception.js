@@ -36,7 +36,7 @@ class ParameterException extends HttpException {
 
 /**
  * 继承HttpException定义code值为201的时候返回类
- * 201为新增时候返回的参数， 200是查询
+ * 201为新增时候返回的参数， 200是查询的标识
  * @author LiMuEn
  * @date 2020-11-15
  * @param 参数
