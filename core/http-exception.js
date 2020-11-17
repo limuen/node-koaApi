@@ -52,8 +52,65 @@ class Success extends HttpException {
     }
 }
 
+/**
+ * 继承HttpException定义code值为404的时候返回类
+ * 404为返回的参数
+ * @author LiMuEn
+ * @date 2020-11-17
+ * @param 参数
+ * @return msg
+ * @return errorCode 
+ */
+class NotFound extends HttpException {
+    constructor(msg, errorCode) {
+        super()
+        this.msg = msg || '资源未找到'
+        this.errorCode = errorCode || 10000
+        this.code = 404
+    }
+}
+
+/**
+ * 继承HttpException定义code值为401的时候返回类
+ * 401为返回的参数 授权失败
+ * @author LiMuEn
+ * @date 2020-11-17
+ * @param 参数
+ * @return msg
+ * @return errorCode 
+ */
+class AuthFailed extends HttpException {
+    constructor(msg, errorCode) {
+        super()
+        this.msg = msg || '授权失败'
+        this.errorCode = errorCode || 10004
+        this.code = 401
+    }
+}
+
+/**
+ * 继承HttpException定义code值为403的时候返回类
+ * 403为返回的参数 禁止访问
+ * @author LiMuEn
+ * @date 2020-11-17
+ * @param 参数
+ * @return msg
+ * @return errorCode 
+ */
+class Forbbiden extends HttpException {
+    constructor(msg, errorCode) {
+        super()
+        this.msg = msg || '禁止访问'
+        this.errorCode = errorCode || 10006
+        this.code = 403
+    }
+}
+
 module.exports = {
     HttpException,
     ParameterException,
-    Success
+    Success,
+    NotFound,
+    AuthFailed,
+    Forbbiden
 }

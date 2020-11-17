@@ -3,7 +3,25 @@ const { sequelize } = require("../../core/db");
 
 const { Sequelize, Model } = require("sequelize");
 
-class User extends Model {}
+class User extends Model {
+  static async verifyEmailPassword(email, plainPassword) {
+    const user = await User.findOne({
+      where: {
+        email
+      }
+    })
+    console.log(user, 'user')
+    if(!user) {
+      throw new global.errs.AuthFailed('账号不存在')
+    }
+    // user.password === plainPassword
+    const correct = bcrypy.compareSync(plainPassword, user.password)
+    if(!correct) {
+      throw new global.errs.AuthFailed('密码不正确')
+    }
+    return user
+  }
+} 
 
 /**
  * @description 生成mysql User表

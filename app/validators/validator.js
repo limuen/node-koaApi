@@ -66,12 +66,23 @@ class TokenValidator extends LinValidator {
         ]
     }
 
+    // 验证type是否被传入
     validateLoginType(vals) {
         if(!vals.body.type) {
-            throw new Error('type必传参数')
+            throw new Error('type是必传参数')
         }
         if(!LoginType.isThisType(vals.body.type)) {
             throw new Error('type参数不合法')
+        }
+    }
+
+    // 验证如果是邮箱登陆，则密码必传
+    validateEmailPassword(vals) {
+        const isEmail = vals.body.type === LoginType.USER_EMAIL
+        if(isEmail) {
+            if(!vals.body.secret) {
+                throw new Error('密码不能为空')
+            }
         }
     }
 }
