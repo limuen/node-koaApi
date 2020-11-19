@@ -1,15 +1,38 @@
-const Router = require('koa-router')
+const Router = require("koa-router");
 const router = new Router({
     prefix: "/v1/classic",
-})
+});
 
-const { PositiveIntegerValidator }  = require('../../validators/validator')
+const {
+    Flow
+} = require("../../models/flow");
 
-const { Auth }  = require('../../../middlewares/auth')
+const {
+    PositiveIntegerValidator
+} = require("../../validators/validator");
 
-router.get('/latest',new Auth().m, async (ctx, next)=>{
-    // 使用scope来分级权限
-    ctx.body = ctx.auth.uid;
-})
+const {
+    Auth
+} = require("../../../middlewares/auth");
 
-module.exports = router
+/**
+ * 获取最新一期期刊
+ * @params 最新一期index
+ * @return content
+ * @return id
+ * @return
+ */
+router.get("/latest", new Auth().m, async (ctx, next) => {
+    // 查询最大的index值 Max 把数据库的记录先进行排序  倒叙就是最新期刊的index
+    const flow = await Flow.findOne({
+        // order让整个数据库按照index来排序 DESC是倒叙
+        order: [
+            ["index", "DESC"]
+        ],
+    });
+    console.log(flow, "flow");
+
+    ctx.body = flow;
+});
+
+module.exports = router;
