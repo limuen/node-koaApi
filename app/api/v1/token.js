@@ -1,6 +1,6 @@
 const Router = require("koa-router");
 const { LoginType } = require("../../lib/enum");
-const { TokenValidator } = require('../../validators/validator')
+const { TokenValidator,NotEmptyValidator } = require('../../validators/validator')
 const { User } = require('../../models/user')
 
 // 引入jwtToken
@@ -39,6 +39,14 @@ router.post('/', async (ctx, next) => {
     ctx.body = {
       token
     }
+})
+
+router.post('/verify', async (ctx, next) => {
+  const v = await new NotEmptyValidator().validate(ctx)
+  const result = Auth.verifyToken(v.get('body.token'))
+  ctx.body = {
+    result
+  }
 })
 
 async function emailLogin(account, secret) {
