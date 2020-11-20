@@ -87,6 +87,16 @@ class TokenValidator extends LinValidator {
     }
 }
 
+// 验证type是否被传入
+function checkType(vals) {
+    if(!vals.body.type) {
+        throw new Error('type是必传参数')
+    }
+    if(!LoginType.isThisType(vals.body.type)) {
+        throw new Error('type参数不合法')
+    }
+}
+
 class NotEmptyValidator extends LinValidator {
     constructor() {
         super()
@@ -96,9 +106,17 @@ class NotEmptyValidator extends LinValidator {
     }
 }
 
+class LikeValidator extends PositiveIntegerValidator {
+    constructor() {
+        super()
+        this.validateType = checkType
+    }
+}
+
 module.exports = {
     PositiveIntegerValidator,
     RegisterValidator,
     TokenValidator,
-    NotEmptyValidator
+    NotEmptyValidator,
+    LikeValidator
 };

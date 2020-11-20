@@ -15,6 +15,8 @@ const {
     Auth
 } = require("../../../middlewares/auth");
 
+const { Art } = require('../../models/art')
+
 /**
  * 获取最新一期期刊
  * @params 最新一期index
@@ -30,9 +32,9 @@ router.get("/latest", new Auth().m, async (ctx, next) => {
             ["index", "DESC"]
         ],
     });
-    console.log(flow, "flow");
-
-    ctx.body = flow;
+    const art = await Art.getData(flow.art_id, flow.type)
+    art.setDataValue('index', flow.index)
+    ctx.body = art;
 });
 
 module.exports = router;

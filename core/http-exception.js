@@ -106,11 +106,54 @@ class Forbbiden extends HttpException {
     }
 }
 
+
+
+/**
+ * 继承HttpException定义code值为400的时候返回类
+ * 400为返回的参数 禁止访问
+ * @author LiMuEn
+ * @date 2020-11-20
+ * @param 参数
+ * @return msg
+ * @return errorCode 
+ */
+class LikeError extends HttpException {
+    constructor(msg, errorCode) {
+        super()
+        this.msg = msg || '你已经点赞过'
+        this.errorCode = errorCode || 60001
+        this.code = 400
+    }
+}
+
+
+/**
+ * 继承HttpException定义code值为400的时候返回类
+ * 400为返回的参数 禁止访问
+ * @author LiMuEn
+ * @date 2020-11-20
+ * @param 参数
+ * @return msg
+ * @return errorCode 
+ */
+class DislikeError extends HttpException {
+    constructor(msg, errorCode) {
+        super()
+        this.msg = msg || '你已取消点赞'
+        this.errorCode = errorCode || 60002
+        this.code = 400
+    }
+}
+
+
+
 module.exports = {
     HttpException,
     ParameterException,
     Success,
     NotFound,
     AuthFailed,
-    Forbbiden
+    Forbbiden,
+    LikeError,
+    DislikeError
 }
